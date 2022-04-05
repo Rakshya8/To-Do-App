@@ -1,31 +1,47 @@
 package com.example.todoapp;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 import java.util.UUID;
 //Plain Old Java CLass
+@Entity (tableName = "tasks")
 public class Task {
-    private UUID id;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String title;
     private String description;
+    @ColumnInfo(name="Updated_date")
     private Date updateDate;
-    public Task(UUID id, String title, String description, Date updateDate){
+
+    @Ignore
+    public Task(int id, String title, String description, Date updateDate){
         this.id=id;
         this.title=title;
         this.description =description;
+
         this.updateDate=updateDate;
 
 
     }
-    public Task(){
-        id=UUID.randomUUID();
-        updateDate=new Date();
+
+    public Task(String title, String description, Date updateDate) {
+        this.title = title;
+        this.description = description;
+        this.updateDate = updateDate;
     }
 
-    public UUID getId() {
+//    public Task(){
+//    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -18,11 +18,11 @@ public class Repository
         }
     }
     public Task getTaskId(UUID id){
-        for (Task item:taskList){
-            if(item.getId()==id){
-                return item;
-            }
-        }
+//        for (Task item:taskList){
+//            if(item.getId()==id){
+//                return item;
+//            }
+//        }
         return null;
 
     }
@@ -39,14 +39,14 @@ public class Repository
         taskList.add(task);
     }
     public void Update(Task task){
-        Task oldTask=getTaskId(task.getId());
-        oldTask.setTitle(task.getTitle());
-        oldTask.setDescription(task.getDescription());
-        oldTask.setUpdateDate(new Date());
+//        Task oldTask=getTaskId(task.getId());
+//        oldTask.setTitle(task.getTitle());
+//        oldTask.setDescription(task.getDescription());
+//        oldTask.setUpdateDate(new Date());
 
     }
     public void delete(Task task){
-        Task taskDelete= getTaskId(task.getId());
-        taskList.remove(taskDelete);
+//        Task taskDelete= getTaskId(task.getId());
+//        taskList.remove(taskDelete);
     }
 }
